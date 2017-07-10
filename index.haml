@@ -1,0 +1,44 @@
+!!!5
+%html{class:"no-js", lang:"es"}
+	%head
+		%meta{charset:"utf-8"}
+		%title La mejor comida en Restaurante Hard
+		%meta{name:"description", content:"come tico en el mejor restaurante de la ciudad, servicio de primera"}
+		%meta{name:"viewport", content:"width:device-width, initial-scale=1"}
+		%link{href:"https://fonts.googleapis.com/css?family=Dancing+Script",rel:"stylesheet"}
+		%link{rel:"stylesheet", href:"css/normalize.css"}
+		%link{rel:"stylesheet", href:"css/bootstrap.css"}
+		%link{rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"}
+		%link{rel:"stylesheet", href:"css/style.css"}
+		%script{src:"js/vendor/modernizr-2.8.3.min.js"}
+	%body
+		="<!--[if lt IE 9]>"
+		%p{class:"browserupgrade"}
+			Estas usando un navegador
+			%strong desactualizado.
+			Por favor
+			%a{href:"http://browsehappy.com/"}
+				actualiza tu navegador
+				para una mejor experiencia
+		="<![endif]-->"
+		.video-container
+			%video{autoplay:true,loop:true,width:"1280",height:"720",poster:"/videos/images/bbq.jpg"}
+				%source{src:"/videos/mp4/bbq.mp4",typ:"video/mp4"}
+				%source{src:"/videos/webm/bbq.webm",typ:"video/webm"}
+		.row.full-height.middle-xs.center-xs.relative.up
+			.col-xs-12
+				.box.white-text
+					%img{src:"/imgs/logo.png", width:200}
+					%h1.dancing-script.title.no-margin Restaurante Facilito
+					%p#is-open 
+						%i.glyphicon.glyphicon-time
+						Abierto ahora
+				%nav.fixed.right.top.navigation.white-text#navigation
+					-menu = ["Inicio", "Menú", "Galería", "Contacto", "Cómo Llegar"]
+					%ul.list-inline
+						-menu.each do |item|
+							%li
+								%a{}= item
+			.absolute.medium.black.large-padding.bottom.full-width.white-text#description
+				Atención cálida y comida preparada por artistas
+
