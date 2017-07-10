@@ -39,6 +39,22 @@
 						-menu.each do |item|
 							%li
 								%a{}= item
-			.absolute.medium.black.large-padding.bottom.full-width.white-text#description
-				Atención cálida y comida preparada por artistas
+			.absolute.black.large-padding.full-width.white-text#description
+				.row.middle-xs.center-xs
+					.col-xs-7.col-sm-6.white-text.medium
+						Atención cálida y comida preparada por artistas
+					.col-xs.hidden#sticky-navigation
+						.box
+							%nav.text-right.navigation
+								%ul.list-inline
+									-menu.each do |item|
+										%li
+											%a{}= item
+
+		.full-height
+
+		%script{src:"https://code.jquery.com/jquery-3.2.1.min.js",integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",crossorigin:"anonymous"}
+		%script
+			window.jQuery || document.write("<script src='/js/vendor/jquery-3.2.1.min.js'><\/script>")
+		%script{src:"/js/main.js"}
 
