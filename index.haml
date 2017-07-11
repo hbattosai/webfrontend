@@ -1,15 +1,17 @@
+-gallery_images = ["Appetizer.jpg","Beers.jpg","BreakFast.jpg","CrispyBurger.jpg","FoodAndBeer.jpg","Hamburger.jpg","HotCakes.jpg","Salads.jpg"]
 !!!5
 %html{class:"no-js", lang:"es"}
 	%head
 		%meta{charset:"utf-8"}
 		%title La mejor comida en Restaurante Hard
 		%meta{name:"description", content:"come tico en el mejor restaurante de la ciudad, servicio de primera"}
-		%meta{name:"viewport", content:"width:device-width, initial-scale=1"}
 		%link{href:"https://fonts.googleapis.com/css?family=Dancing+Script",rel:"stylesheet"}
 		%link{rel:"stylesheet", href:"css/normalize.css"}
 		%link{rel:"stylesheet", href:"css/bootstrap.css"}
 		%link{rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"}
 		%link{rel:"stylesheet", href:"css/style.css"}
+		%meta{name:"viewport", content:"width:device-width, initial-scale=1"}
+		%meta{:"data-name" => "image-counter", content:"#{gallery_images.size - 1}"}
 		%script{src:"js/vendor/modernizr-2.8.3.min.js"}
 	%body
 		="<!--[if lt IE 9]>"
@@ -25,7 +27,7 @@
 			%video{autoplay:true,loop:true,width:"1280",height:"720",poster:"/videos/images/bbq.jpg"}
 				%source{src:"/videos/mp4/bbq.mp4",typ:"video/mp4"}
 				%source{src:"/videos/webm/bbq.webm",typ:"video/webm"}
-		.row.full-height.middle-xs.center-xs.relative.up
+		.row.full-height.middle-xs.center-xs.relative.up#home
 			.col-xs-12
 				.box.white-text
 					%img{src:"/imgs/logo.png", width:200}
@@ -51,10 +53,26 @@
 										%li
 											%a{}= item
 
-		.full-height
+		.text-center.relative#menu
+			.absolute.white#menu-title
+				.h2.dancing-script.title Menú
+			-menu_photos = [{name:"Break Fast",image:"BreakFast",pricing:"10.00"},{name:"Food and Beer",image:"FoodAndBeer",pricing:"30.00"},{name:"Full Appetizer",image:"Appetizer",pricing:"20.00"},{name:"Crispy Burger",image:"CrispyBurger",pricing: "15.00"},{name:"Salads", image:"Salads", pricing: "10.00"},{name:"HotCakes",image:"HotCakes",pricing:"10.00"},{name:"Hamburger",image:"Hamburger",pricing:"15.00"},{name:"Beers",image:"Beers",pricing:"10.00"}]
+			
+			.row
+				-menu_photos.each do |photo|
+					.col-md-4.col-lg-3.col-sm-6-.col-xs-12.food{style:"background-image:url(/imgs/food/#{photo[:image]}-thumb.jpg)"}
+						.screem
+							.row.middle-xs.full-height
+								.col-xs-12
+									%h3.dancing-script.white-text.subtitle= photo[:name]
+		#galeria
+			.inner
+				-gallery_images.each do |image|
+					.image{style:"background-image:url(/imgs/food/#{image});"}
+
 
 		%script{src:"https://code.jquery.com/jquery-3.2.1.min.js",integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",crossorigin:"anonymous"}
-		%script
+		:javascript
 			window.jQuery || document.write("<script src='/js/vendor/jquery-3.2.1.min.js'><\/script>")
 		%script{src:"/js/main.js"}
 
