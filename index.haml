@@ -84,21 +84,26 @@
 			.row.middle-xs.full-height
 				.col-xs-12
 					.box
+						%p.text-center.medium#info-contacto Presiona enter para llenar el campo correspondiente y enviarnos un correo.
+						
 						%form.black-text{action:"https://formspree.io/marianodellaporta@gmail.com",method:"POST",id:"contact-form",class:"step-form"}
 							.row.center-xs
 								.col-xs-2.col-md-1
-									.box
+									.box.text-center
+										-3.times do |i|
+											-if i == 0
+												.path-step.active
+											-else	
+												.path-step
+											%br
 								.col-xs-5
 									.box
+										%fieldset.step.active
+											%input{type:"email",name:"email",placeholder:"Tu correo electrónico",class:"input",required:"True"}
 										%fieldset.step
-											%input{type:"email",name:"email",placeholder:"Coloca tu correo electrónico",class:"input",required:"True"}
+											%input{type:"text",name:"name",placeholder:"Tu nombre",class:"input",required:"True"}
 										%fieldset.step
-											%input{type:"text",name:"name",placeholder:"Coloca tu nombre",class:"input",required:"True"}
-										%fieldset.step
-											%input{name:"body",placeholder:"Escribe aquí tu mensaje...",class:"input",required:"True"}
-										%div
-											%button{type:"submit",class:"btn"}
-												Enviar
+											%input{name:"body",placeholder:"Tu mensaje",class:"input",required:"True"}							
 
 
 		%script{src:"https://code.jquery.com/jquery-3.2.1.min.js",integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",crossorigin:"anonymous"}

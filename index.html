@@ -201,27 +201,30 @@
       <div class="row middle-xs full-height">
         <div class="col-xs-12">
           <div class="box">
+            <p class="text-center medium" id="info-contacto">Presiona enter para llenar el campo correspondiente y enviarnos un correo.</p>
             <form action="https://formspree.io/marianodellaporta@gmail.com" class="black-text step-form" id="contact-form" method="POST">
               <div class="row center-xs">
                 <div class="col-xs-2 col-md-1">
-                  <div class="box"></div>
+                  <div class="box text-center">
+                    <div class="path-step active"></div>
+                    <br>
+                    <div class="path-step"></div>
+                    <br>
+                    <div class="path-step"></div>
+                    <br>
+                  </div>
                 </div>
                 <div class="col-xs-5">
                   <div class="box">
-                    <fieldset class="step">
-                      <input class="input" name="email" placeholder="Coloca tu correo electrónico" required="True" type="email">
+                    <fieldset class="step active">
+                      <input class="input" name="email" placeholder="Tu correo electrónico" required="True" type="email">
                     </fieldset>
                     <fieldset class="step">
-                      <input class="input" name="name" placeholder="Coloca tu nombre" required="True" type="text">
+                      <input class="input" name="name" placeholder="Tu nombre" required="True" type="text">
                     </fieldset>
                     <fieldset class="step">
-                      <input class="input" name="body" placeholder="Escribe aquí tu mensaje..." required="True">
+                      <input class="input" name="body" placeholder="Tu mensaje" required="True">
                     </fieldset>
-                    <div>
-                      <button class="btn" type="submit">
-                        Enviar
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
