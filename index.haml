@@ -69,10 +69,42 @@
 			.inner
 				-gallery_images.each do |image|
 					.image{style:"background-image:url(/imgs/food/#{image});"}
+		.container
+			.card.white.black-text.text-center.relative
+				%h3.slim
+					En
+					%strong.dancing-script.medium RestauranteFacilito
+					cocinar no es una profesión, no es una técnica, es un
+					%strong.dancing-script.medium arte
+				%p.top-space
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id maximus ipsum. Fusce molestie dolor vel felis laoreet faucibus. Fusce feugiat, ex ut facilisis tincidunt, lacus lectus imperdiet arcu, eget scelerisque arcu nisi nec mi. Aliquam bibendum scelerisque lectus, vel suscipit erat elementum lacinia. Vestibulum non erat vel ex gravida commodo. Aenean et tincidunt ipsum. Ut non molestie magna, vitae cursus nulla. Fusce quis pretium lorem.
+					%strong.dancing-script.medium Ezequiel - Chef
+
+		.black.white-text.full-height#contact
+			.row.middle-xs.full-height
+				.col-xs-12
+					.box
+						%form.black-text{action:"https://formspree.io/marianodellaporta@gmail.com",method:"POST",id:"contact-form",class:"step-form"}
+							.row.center-xs
+								.col-xs-2.col-md-1
+									.box
+								.col-xs-5
+									.box
+										%fieldset.step
+											%input{type:"email",name:"email",placeholder:"Coloca tu correo electrónico",class:"input",required:"True"}
+										%fieldset.step
+											%input{type:"text",name:"name",placeholder:"Coloca tu nombre",class:"input",required:"True"}
+										%fieldset.step
+											%input{name:"body",placeholder:"Escribe aquí tu mensaje...",class:"input",required:"True"}
+										%div
+											%button{type:"submit",class:"btn"}
+												Enviar
 
 
 		%script{src:"https://code.jquery.com/jquery-3.2.1.min.js",integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",crossorigin:"anonymous"}
 		:javascript
 			window.jQuery || document.write("<script src='/js/vendor/jquery-3.2.1.min.js'><\/script>")
+		%script{src:"/js/form_object.js"}
 		%script{src:"/js/main.js"}
+		%script{src:"/dist/step.js"}
 
