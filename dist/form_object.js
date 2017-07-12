@@ -1,8 +1,8 @@
 "use strict";
 
 $.fn.formObject = function() {
-    var form = {};
-    return $.each($(this).serializeArray(), function(i, field) {
-        form[field.name] = field.value || "";
-    }), form;
+    var e = {};
+    return $.each($(this).serializeArray(), function(r, n) {
+        e[n.name] = n.value || "";
+    }), e;
 };

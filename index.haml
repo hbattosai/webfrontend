@@ -10,9 +10,9 @@
 		%link{rel:"stylesheet", href:"css/bootstrap.css"}
 		%link{rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"}
 		%link{rel:"stylesheet", href:"css/style.css"}
-		%meta{name:"viewport", content:"width:device-width, initial-scale=1"}
+		%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
 		%meta{:"data-name" => "image-counter", content:"#{gallery_images.size - 1}"}
-		%script{src:"js/vendor/modernizr-2.8.3.min.js"}
+		%script{src:"js/vendor/modernizr-3.5.0.min.js"}
 	%body
 		="<!--[if lt IE 9]>"
 		%p{class:"browserupgrade"}
@@ -103,13 +103,19 @@
 										%fieldset.step
 											%input{type:"text",name:"name",placeholder:"Tu nombre",class:"input",required:"True"}
 										%fieldset.step
-											%input{name:"body",placeholder:"Tu mensaje",class:"input",required:"True"}							
+											%input{name:"body",placeholder:"Tu mensaje",class:"input",required:"True"}
+
+		#location
+			#map
+			#message.black.large-padding.white-text.text-center.medium
 
 
 		%script{src:"https://code.jquery.com/jquery-3.2.1.min.js",integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",crossorigin:"anonymous"}
 		:javascript
 			window.jQuery || document.write("<script src='/js/vendor/jquery-3.2.1.min.js'><\/script>")
-		%script{src:"/js/form_object.js"}
-		%script{src:"/js/main.js"}
+		%script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PY9iDkH3OlQtQ-Dcj-DlnO41lIctUFU"}
+		%script{src:"/dist/maps.js"}
+		%script{src:"/dist/form_object.js"}
+		%script{src:"/dist/main.js"}
 		%script{src:"/dist/step.js"}
 
