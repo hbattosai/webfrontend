@@ -34,24 +34,25 @@
 					%h1.dancing-script.title.no-margin Restaurante Facilito
 					%p#is-open 
 						%i.glyphicon.glyphicon-time
-						Abierto ahora
-				%nav.fixed.right.top.navigation.white-text#navigation
-					-menu = ["Inicio", "Menú", "Galería", "Contacto", "Cómo Llegar"]
-					%ul.list-inline
-						-menu.each do |item|
-							%li
-								%a{}= item
-			.absolute.black.large-padding.full-width.white-text#description
+						%span.text Abierto ahora
+			%nav.fixed.top.right.navigation.white-text#navigation
+				-menu = [{title:"Home",link:"#home"},{title:"Menú",link:"#menu"},{title:"Galería",link:"#galeria"},{title:"Contacto",link:"#contact"},{title:"Comó llegar",link:"#location"}]
+				%ul.list-inline
+					-menu.each do |item|
+						%li
+							%a{href:item[:link]}= item[:title]
+			.absolute.black.large-padding.white-text.full-width#description
 				.row.middle-xs.center-xs
 					.col-xs-7.col-sm-6.white-text.medium
 						Atención cálida y comida preparada por artistas
 					.col-xs.hidden#sticky-navigation
 						.box
-							%nav.text-right.navigation
+							%nav.text-right.navigation#responsive-nav
+								%i.glyphicon.glyphicon-menu-hamburger.white-text.subtitle.glyphicon-remove#menu-opener
 								%ul.list-inline
 									-menu.each do |item|
 										%li
-											%a{}= item
+											%a.menu-link{href:item[:link]}= item[:title]
 
 		.text-center.relative#menu
 			.absolute.white#menu-title
@@ -79,6 +80,8 @@
 				%p.top-space
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id maximus ipsum. Fusce molestie dolor vel felis laoreet faucibus. Fusce feugiat, ex ut facilisis tincidunt, lacus lectus imperdiet arcu, eget scelerisque arcu nisi nec mi. Aliquam bibendum scelerisque lectus, vel suscipit erat elementum lacinia. Vestibulum non erat vel ex gravida commodo. Aenean et tincidunt ipsum. Ut non molestie magna, vitae cursus nulla. Fusce quis pretium lorem.
 					%strong.dancing-script.medium Ezequiel - Chef
+					.large-padding.medium.black.white-text.text-center
+						También puedes acceder a este sitio sin conexión internet
 
 		.black.white-text.full-height#contact
 			.row.middle-xs.full-height
@@ -88,15 +91,14 @@
 						
 						%form.black-text{action:"https://formspree.io/marianodellaporta@gmail.com",method:"POST",id:"contact-form",class:"step-form"}
 							.row.center-xs
-								.col-xs-2.col-md-1
+								.col-xs-12.col-sm-2.col-md-1.first-sm
 									.box.text-center
 										-3.times do |i|
 											-if i == 0
 												.path-step.active
 											-else	
 												.path-step
-											%br
-								.col-xs-5
+								.col-xs-12.col-sm-3.fist-xs
 									.box
 										%fieldset.step.active
 											%input{type:"email",name:"email",placeholder:"Tu correo electrónico",class:"input",required:"True"}

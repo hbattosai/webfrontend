@@ -1,28 +1,35 @@
 "use strict";
 
-!function() {
+navigator.serviceWorker && navigator.serviceWorker.register("/sw.js"), function() {
+    function e() {
+        var e = o();
+        e && !a && (a = !0, i()), !e && a && (a = !1, t());
+    }
+    function n() {
+        $("#responsive-nav ul").toggleClass("active"), $("#menu-opener").toggleClass("glyphicon-menu-hamburger");
+    }
     function i() {
         $("#description").addClass("fixed").removeClass("absolute"), $("#navigation").slideUp(), 
         $("#sticky-navigation").slideDown("fast");
     }
-    function n() {
+    function t() {
         $("#description").removeClass("fixed").addClass("absolute"), $("#navigation").slideDown("fast"), 
         $("#sticky-navigation").slideUp("fast");
     }
-    function t() {
-        var i = $("#description").height();
-        return $(window).scrollTop() > $(window).height() - 2.5 * i;
+    function o() {
+        var e = $("#description").height();
+        return $(window).scrollTop() > $(window).height() - 2.5 * e;
     }
-    var e = !1, a = 0, s = $("[data-name='image-counter']").attr("content");
-    $("#contact-form").on("submit", function(i) {
-        return i.preventDefault(), sendForm($(this)), !1;
+    var a = !1, s = 0, r = $("[data-name='image-counter']").attr("content");
+    $("#contact-form").on("submit", function(e) {
+        return e.preventDefault(), sendForm($(this)), !1;
     }), $("#sticky-navigation").removeClass("hidden"), $("#sticky-navigation").slideUp(0), 
-    setInterval(function() {
-        a < s ? a++ : a = 0, $("#galeria .inner").css({
-            left: "-" + 100 * a + "%"
+    e(), function() {
+        var e = new Date().getHours();
+        (e < 17 || e > 23) && $("#is-open .text").html("Cerrado ahora <br> Abierto de 5:00pm a 23:00pm");
+    }(), $("#menu-opener").on("click", n), $(".menu-link").on("click", n), setInterval(function() {
+        s < r ? s++ : s = 0, $("#galeria .inner").css({
+            left: "-" + 100 * s + "%"
         });
-    }, 4e3), $(window).scroll(function() {
-        var a = t();
-        a && !e && (e = !0, i()), !a && e && (e = !1, n());
-    });
+    }, 4e3), $(window).scroll(e);
 }();

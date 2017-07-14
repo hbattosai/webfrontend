@@ -38,52 +38,53 @@
           <h1 class="dancing-script title no-margin">Restaurante Facilito</h1>
           <p id="is-open">
             <i class="glyphicon glyphicon-time"></i>
-            Abierto ahora
+            <span class="text">Abierto ahora</span>
           </p>
         </div>
-        <nav class="fixed right top navigation white-text" id="navigation">
-          <ul class="list-inline">
-            <li>
-              <a>Inicio</a>
-            </li>
-            <li>
-              <a>Menú</a>
-            </li>
-            <li>
-              <a>Galería</a>
-            </li>
-            <li>
-              <a>Contacto</a>
-            </li>
-            <li>
-              <a>Cómo Llegar</a>
-            </li>
-          </ul>
-        </nav>
       </div>
-      <div class="absolute black large-padding full-width white-text" id="description">
+      <nav class="fixed top right navigation white-text" id="navigation">
+        <ul class="list-inline">
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#menu">Menú</a>
+          </li>
+          <li>
+            <a href="#galeria">Galería</a>
+          </li>
+          <li>
+            <a href="#contact">Contacto</a>
+          </li>
+          <li>
+            <a href="#location">Comó llegar</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="absolute black large-padding white-text full-width" id="description">
         <div class="row middle-xs center-xs">
           <div class="col-xs-7 col-sm-6 white-text medium">
             Atención cálida y comida preparada por artistas
           </div>
           <div class="col-xs hidden" id="sticky-navigation">
             <div class="box">
-              <nav class="text-right navigation">
+              <nav class="text-right navigation" id="responsive-nav">
+                <i class="glyphicon glyphicon-menu-hamburger white-text subtitle glyphicon-remove" id="menu-opener"></i>
                 <ul class="list-inline">
                   <li>
-                    <a>Inicio</a>
+                    <a class="menu-link" href="#home">Home</a>
                   </li>
                   <li>
-                    <a>Menú</a>
+                    <a class="menu-link" href="#menu">Menú</a>
                   </li>
                   <li>
-                    <a>Galería</a>
+                    <a class="menu-link" href="#galeria">Galería</a>
                   </li>
                   <li>
-                    <a>Contacto</a>
+                    <a class="menu-link" href="#contact">Contacto</a>
                   </li>
                   <li>
-                    <a>Cómo Llegar</a>
+                    <a class="menu-link" href="#location">Comó llegar</a>
                   </li>
                 </ul>
               </nav>
@@ -194,6 +195,9 @@
         <p class="top-space">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id maximus ipsum. Fusce molestie dolor vel felis laoreet faucibus. Fusce feugiat, ex ut facilisis tincidunt, lacus lectus imperdiet arcu, eget scelerisque arcu nisi nec mi. Aliquam bibendum scelerisque lectus, vel suscipit erat elementum lacinia. Vestibulum non erat vel ex gravida commodo. Aenean et tincidunt ipsum. Ut non molestie magna, vitae cursus nulla. Fusce quis pretium lorem.
           <strong class="dancing-script medium">Ezequiel - Chef</strong>
+          <div class="large-padding medium black white-text text-center">
+            También puedes acceder a este sitio sin conexión internet
+          </div>
         </p>
       </div>
     </div>
@@ -204,17 +208,14 @@
             <p class="text-center medium" id="info-contacto">Presiona enter para llenar el campo correspondiente y enviarnos un correo.</p>
             <form action="https://formspree.io/marianodellaporta@gmail.com" class="black-text step-form" id="contact-form" method="POST">
               <div class="row center-xs">
-                <div class="col-xs-2 col-md-1">
+                <div class="col-xs-12 col-sm-2 col-md-1 first-sm">
                   <div class="box text-center">
                     <div class="path-step active"></div>
-                    <br>
                     <div class="path-step"></div>
-                    <br>
                     <div class="path-step"></div>
-                    <br>
                   </div>
                 </div>
-                <div class="col-xs-5">
+                <div class="col-xs-12 col-sm-3 fist-xs">
                   <div class="box">
                     <fieldset class="step active">
                       <input class="input" name="email" placeholder="Tu correo electrónico" required="True" type="email">

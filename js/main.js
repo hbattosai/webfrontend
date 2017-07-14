@@ -1,3 +1,7 @@
+if (navigator.serviceWorker){
+	navigator.serviceWorker.register("/sw.js")
+}
+
 ;(function(){
 
 	let sticky = false
@@ -16,6 +20,12 @@
 
 	$("#sticky-navigation").removeClass("hidden")
 	$("#sticky-navigation").slideUp(0)
+	checkScroll()
+	isOpen()
+
+	$("#menu-opener").on("click",toggleNav)
+
+	$(".menu-link").on("click",toggleNav)
 
 	setInterval(()=>{
 
@@ -33,7 +43,10 @@
 	},4000)
 
 
-	$(window).scroll(()=>{
+	$(window).scroll(checkScroll)
+
+
+	function checkScroll(){
 		const inBottom = isInBottom()
 
 		if (inBottom && !sticky) {
@@ -46,7 +59,22 @@
 			sticky = false
 			unStickNavigation()
 		}
-	})
+	}
+
+	function isOpen(){
+		// Reloj 24 => 5pm 11pm => 17 -- 23
+		let date = new Date()
+		const current_hour = date.getHours()
+
+		if(current_hour < 17 || current_hour > 23){
+			$("#is-open .text").html("Cerrado ahora <br> Abierto de 5:00pm a 23:00pm")
+		}
+	}
+
+	function toggleNav(){
+		$("#responsive-nav ul").toggleClass("active")
+		$("#menu-opener").toggleClass("glyphicon-menu-hamburger")
+	}
 
 	function stickNavigation(){
 		$("#description").addClass("fixed").removeClass("absolute")

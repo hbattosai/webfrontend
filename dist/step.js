@@ -9,7 +9,7 @@
     }
     function e(t) {
         $(".step.active").removeClass("active"), t.addClass("active"), t.find(".input").focus();
-        var n = 2 * t.index(".step") + 1;
+        var n = t.index(".step") + 1;
         a($(".path-step:nth-child(" + n + ")"));
     }
     function a(t) {
